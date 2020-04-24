@@ -9,6 +9,12 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
 
 public class TelaCalc {
 
@@ -102,6 +108,7 @@ public class TelaCalc {
 				System.exit(0);
 			}
 		});
+		
 		botaoSair.setBounds(335, 227, 89, 23);
 		frame.getContentPane().add(botaoSair);
 
@@ -116,9 +123,25 @@ public class TelaCalc {
 		botaoLimpar.setBounds(335, 193, 89, 23);
 		frame.getContentPane().add(botaoLimpar);
 
-		JLabel lblNewLabel_4 = new JLabel("Aula P.O.O com Java");
-		lblNewLabel_4.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
-		lblNewLabel_4.setBounds(125, 11, 192, 23);
-		frame.getContentPane().add(lblNewLabel_4);
+		JLabel tituloLabel = new JLabel("Calculadora");
+		tituloLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
+		tituloLabel.setBounds(125, 31, 192, 23);
+		frame.getContentPane().add(tituloLabel);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 424, 22);
+		frame.getContentPane().add(menuBar);
+		
+		JMenu opcoesMenu = new JMenu("Op\u00E7\u00F5es");
+		menuBar.add(opcoesMenu);
+		
+		JMenuItem retornarMenuItem = new JMenuItem("Retornar");
+		retornarMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaMenu.main(null);
+			}
+		});
+		retornarMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, InputEvent.CTRL_MASK));
+		opcoesMenu.add(retornarMenuItem);
 	}
 }
