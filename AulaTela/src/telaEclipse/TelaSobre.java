@@ -47,6 +47,7 @@ public class TelaSobre extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaSobre() {
+		setTitle("Sobre");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		

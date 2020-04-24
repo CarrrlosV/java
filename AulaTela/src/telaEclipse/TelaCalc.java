@@ -18,7 +18,7 @@ import java.awt.event.InputEvent;
 
 public class TelaCalc {
 
-	private JFrame frame;
+	private JFrame frmCalculadora;
 	private JTextField numero1TextField;
 	private JTextField numero2TextField;
 	private JTextField resultadoTextField;
@@ -31,7 +31,7 @@ public class TelaCalc {
 			public void run() {
 				try {
 					TelaCalc window = new TelaCalc();
-					window.frame.setVisible(true);
+					window.frmCalculadora.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -50,41 +50,42 @@ public class TelaCalc {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmCalculadora = new JFrame();
+		frmCalculadora.setTitle("Calculadora");
+		frmCalculadora.setBounds(100, 100, 450, 300);
+		frmCalculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmCalculadora.getContentPane().setLayout(null);
 
 		numero1TextField = new JTextField();
 		numero1TextField.setBounds(10, 101, 56, 20);
-		frame.getContentPane().add(numero1TextField);
+		frmCalculadora.getContentPane().add(numero1TextField);
 		numero1TextField.setColumns(10);
 
 		numero2TextField = new JTextField();
 		numero2TextField.setBounds(116, 101, 56, 20);
-		frame.getContentPane().add(numero2TextField);
+		frmCalculadora.getContentPane().add(numero2TextField);
 		numero2TextField.setColumns(10);
 
 		resultadoTextField = new JTextField();
 		resultadoTextField.setBounds(261, 101, 56, 20);
-		frame.getContentPane().add(resultadoTextField);
+		frmCalculadora.getContentPane().add(resultadoTextField);
 		resultadoTextField.setColumns(10);
 
 		JLabel adicaoLabel = new JLabel("+");
 		adicaoLabel.setBounds(91, 104, 15, 14);
-		frame.getContentPane().add(adicaoLabel);
+		frmCalculadora.getContentPane().add(adicaoLabel);
 
 		JLabel numero1Label = new JLabel("n\u00B0 1");
 		numero1Label.setBounds(20, 76, 46, 14);
-		frame.getContentPane().add(numero1Label);
+		frmCalculadora.getContentPane().add(numero1Label);
 
 		JLabel resultadoLabel = new JLabel("Resultado");
 		resultadoLabel.setBounds(261, 76, 56, 14);
-		frame.getContentPane().add(resultadoLabel);
+		frmCalculadora.getContentPane().add(resultadoLabel);
 
 		JLabel numero2Label = new JLabel("n\u00B0 2");
 		numero2Label.setBounds(126, 76, 46, 14);
-		frame.getContentPane().add(numero2Label);
+		frmCalculadora.getContentPane().add(numero2Label);
 
 		JButton botaoCalculaSoma = new JButton("=");
 		botaoCalculaSoma.addActionListener(new ActionListener() {
@@ -100,7 +101,7 @@ public class TelaCalc {
 			}
 		});
 		botaoCalculaSoma.setBounds(194, 101, 46, 20);
-		frame.getContentPane().add(botaoCalculaSoma);
+		frmCalculadora.getContentPane().add(botaoCalculaSoma);
 
 		JButton botaoSair = new JButton("Sair");
 		botaoSair.addActionListener(new ActionListener() {
@@ -110,7 +111,7 @@ public class TelaCalc {
 		});
 		
 		botaoSair.setBounds(335, 227, 89, 23);
-		frame.getContentPane().add(botaoSair);
+		frmCalculadora.getContentPane().add(botaoSair);
 
 		JButton botaoLimpar = new JButton("Limpar");
 		botaoLimpar.addActionListener(new ActionListener() {
@@ -121,16 +122,16 @@ public class TelaCalc {
 			}
 		});
 		botaoLimpar.setBounds(335, 193, 89, 23);
-		frame.getContentPane().add(botaoLimpar);
+		frmCalculadora.getContentPane().add(botaoLimpar);
 
 		JLabel tituloLabel = new JLabel("Calculadora");
 		tituloLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 20));
 		tituloLabel.setBounds(125, 31, 192, 23);
-		frame.getContentPane().add(tituloLabel);
+		frmCalculadora.getContentPane().add(tituloLabel);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 424, 22);
-		frame.getContentPane().add(menuBar);
+		frmCalculadora.getContentPane().add(menuBar);
 		
 		JMenu opcoesMenu = new JMenu("Op\u00E7\u00F5es");
 		menuBar.add(opcoesMenu);
