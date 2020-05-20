@@ -7,11 +7,11 @@ public class Contato {
 		bdcontato.conectar();
 
 		if (bdcontato.estaConectado()) {
-			bdcontato.listarContato();
-			bdcontato.inserirContato("Laiane Andrade", "985530-7451");
-//			bdcontato.editarContato();
-//			bdcontato.apagarContato();
-//			bdcontato.desconectar();
+//			bdcontato.listarContato();
+//			bdcontato.inserirContato("TESTE", "985530-7451");
+//			bdcontato.editarContato(3,"Laiane Andrade","7777-7777");
+//			bdcontato.apagarContato(4);
+			bdcontato.desconectar();
 		} else {
 			System.out.println("Não foi possivel conectar!");
 		}

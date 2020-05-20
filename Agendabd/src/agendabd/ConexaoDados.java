@@ -54,23 +54,41 @@ public class ConexaoDados {
 
 	public void inserirContato(String nome, String telefone) {
 		try {
-			String query = "INSERT INTO contato(nome, telefone) VALUES ('"+ nome + "','" + telefone + "');";
+			String query = "INSERT INTO contato(nome, telefone) VALUES ('" + nome + "','" + telefone + "');";
 			this.statement.executeUpdate(query);
 		} catch (Exception e) {
 			System.out.println("Erro " + e.getMessage());
 		}
 	}
 
-	public void editarContato() {
-
+	public void editarContato(int id, String novoNome, String novoTelefone) {
+		try {
+			String query = "UPDATE contato SET nome = '" + novoNome + "', telefone = '" + novoTelefone + "'WHERE id = "
+					+ id + ";";
+			this.statement.executeUpdate(query); // não retorna, é diferente do pesquisar
+			System.out.println("Contato editado com sucesso !!!");
+		} catch (Exception e) {
+			System.out.println("Erro " + e.getMessage());
+		}
 	}
 
-	public void apagarContato() {
-
+	public void apagarContato(int id) {
+		try {
+			String query = "DELETE FROM contato WHERE id = " + id + ";";
+			this.statement.executeUpdate(query); // não retorna, é diferente do pesquisar
+			System.out.println("Contato apagado com sucesso!!!");
+		} catch (Exception e) {
+			System.out.println("Erro " + e.getMessage());
+		}
 	}
 
 	public void desconectar() {
-
+		try {
+			this.connection.close();
+			System.out.println("Desconexão feita com suceso!!!");
+		} catch (Exception e) {
+			System.out.println("Erro " + e.getMessage());
+		}
 	}
 
 }
